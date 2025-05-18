@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
@@ -23,16 +22,50 @@ const childData = {
 const alertsData = [
   {
     id: "1",
-    type: "boundary" as const,
-    message: "민서가 안전 구역을 벗어났습니다.",
-    time: "10분 전",
+    type: "place" as const,
+    category: "장소" as const,
+    message: "민서가 유치원에 도착했습니다.",
+    time: "5분 전",
     read: false,
   },
   {
     id: "2",
-    type: "movement" as const,
-    message: "민서가 빠르게 이동하고 있습니다.",
+    type: "activity" as const,
+    category: "이동" as const,
+    message: "민서가 평소보다 빠르게 이동 중입니다. (1.5km/h 초과)",
+    time: "15분 전",
+    read: true,
+  },
+  {
+    id: "3",
+    type: "device" as const,
+    category: "기기" as const,
+    message: "민서의 스마트워치 배터리가 15% 남았습니다.",
     time: "30분 전",
+    read: false,
+  },
+  {
+    id: "4",
+    type: "place" as const,
+    category: "장소" as const,
+    message: "민서가 지정된 안전 구역을 벗어났습니다.",
+    time: "1시간 전",
+    read: true,
+  },
+  {
+    id: "5",
+    type: "activity" as const,
+    category: "이동" as const,
+    message: "민서가 한 장소에 30분 이상 머무르고 있습니다.",
+    time: "2시간 전",
+    read: false,
+  },
+  {
+    id: "6",
+    type: "all" as const,
+    category: "전체" as const,
+    message: "[공지] 주말 서비스 안정화 작업 안내",
+    time: "1일 전",
     read: true,
   },
 ];

@@ -4,7 +4,8 @@ import { useIsMobile } from "@/hooks/use-mobile";
 
 interface Alert {
   id: string;
-  type: "boundary" | "distance" | "movement" | "battery";
+  type: "all" | "place" | "activity" | "device";
+  category: "전체" | "장소" | "이동" | "기기";
   message: string;
   time: string;
   read: boolean;
@@ -21,12 +22,12 @@ export const RecentAlerts: React.FC<RecentAlertsProps> = ({
 }) => {
   const isMobile = useIsMobile();
   
-  const getAlertIcon = (type: string) => {
+  const getAlertIcon = (type: Alert["type"]) => {
     switch(type) {
-      case "boundary": return "🚨";
-      case "distance": return "📏";
-      case "movement": return "🏃‍♂️";
-      case "battery": return "🔋";
+      case "place": return "📍";
+      case "activity": return "🏃";
+      case "device": return "🔋";
+      case "all":
       default: return "ℹ️";
     }
   };
